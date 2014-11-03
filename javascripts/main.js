@@ -52,7 +52,8 @@ function main() {
   {
     algrOrder[i] = Math.random()>0.5 ? 1 : 2;
   }
-  showImage(showOrder[count], algrOrder[count]);  
+  showImage(showOrder[count], algrOrder[count]);
+  alert(imageName[showOrder[count]]); 
 }
 
 function showImage(number, order) {
@@ -79,7 +80,7 @@ function randomsort(a, b) {
 } 
 
 function click1() {
-  alert(imageName[showOrder[count]]);
+  //alert(imageName[showOrder[count]]);
   if (algrOrder[count] == 1) {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
@@ -94,9 +95,10 @@ function click1() {
   count = count + 1;
   if (count < 3) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
-    showImage(showOrder[count], algrOrder[count]);     
+    showImage(showOrder[count], algrOrder[count]);
+    alert(imageName[showOrder[count]]);     
   } else {
-    //window.location.href="index.html";  
+    window.location.href="index.html";  
   }
 }
 
@@ -116,9 +118,10 @@ function click2() {
   count = count + 1;
   if (count < 3) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
-    showImage(showOrder[count], algrOrder[count]);      
+    showImage(showOrder[count], algrOrder[count]);
+    alert(imageName[showOrder[count]]);     
   } else {
     //data.save();
-    //window.location.href="index.html";     
+    window.location.href="index.html";     
   }
 }
