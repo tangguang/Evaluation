@@ -5,6 +5,7 @@ var pathS = "./Data/Saber/";
 var showOrder = new Array(411);
 var algrOrder = new Array(411);
 
+id = 1;
 Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
 var Data = Parse.Object.extend("Data");
 // var data = new Data();
@@ -85,11 +86,13 @@ function click1() {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
     data.set("Choice", 1);
+    data.set("testID", id);
     data.save();
   } else {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
     data.set("Choice", 2);
+    data.set("testID", id);
     data.save();
   }
   count = count + 1;
@@ -108,11 +111,13 @@ function click2() {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
     data.set("Choice", 2);
+    data.set("testID", id);
     data.save();
   } else {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
     data.set("Choice", 1);
+    data.set("testID", id);
     data.save();
   }
   count = count + 1;
