@@ -79,7 +79,7 @@ function randomsort(a, b) {
 } 
 
 function click1() {
-  //alert(imageName[showOrder[count]]);
+  alert(imageName[showOrder[count]]);
   if (algrOrder[count] == 1) {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
@@ -101,7 +101,7 @@ function click1() {
 }
 
 function click2() {
-  //alert(imageName[showOrder[count]]);
+  alert(imageName[showOrder[count]]);
   if (algrOrder[count] == 1) {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
