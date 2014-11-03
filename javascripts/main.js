@@ -53,7 +53,7 @@ function main() {
     algrOrder[i] = Math.random()>0.5 ? 1 : 2;
   }
   showImage(showOrder[count], algrOrder[count]);
-  alert(imageName[showOrder[count]]); 
+  //alert(imageName[showOrder[count]]); 
 }
 
 function showImage(number, order) {
@@ -96,14 +96,14 @@ function click1() {
   if (count < 100) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
     showImage(showOrder[count], algrOrder[count]);
-    alert(imageName[showOrder[count]]);     
+    //alert(imageName[showOrder[count]]);     
   } else {
     window.location.href="index.html";  
   }
 }
 
 function click2() {
-  alert(imageName[showOrder[count]]);
+  //alert(imageName[showOrder[count]]);
   if (algrOrder[count] == 1) {
     var data = new Data();
     data.set("imageName", imageName[showOrder[count]]);
@@ -119,7 +119,7 @@ function click2() {
   if (count < 100) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
     showImage(showOrder[count], algrOrder[count]);
-    alert(imageName[showOrder[count]]);     
+    //alert(imageName[showOrder[count]]);     
   } else {
     window.location.href="index.html";     
   }
