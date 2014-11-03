@@ -93,7 +93,7 @@ function click1() {
     data.save();
   }
   count = count + 1;
-  if (count < 10) {
+  if (count < 100) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
     showImage(showOrder[count], algrOrder[count]);
     alert(imageName[showOrder[count]]);     
@@ -116,12 +116,11 @@ function click2() {
     data.save();
   }
   count = count + 1;
-  if (count < 10) {
+  if (count < 100) {
     document.getElementById("label").innerHTML = count + 1 + "/100";
     showImage(showOrder[count], algrOrder[count]);
     alert(imageName[showOrder[count]]);     
   } else {
-    //data.save();
     window.location.href="index.html";     
   }
 }
