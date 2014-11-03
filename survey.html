@@ -40,7 +40,7 @@
   </style>
 </head>
 
-<body>
+<body>  
 <div class="pos0">
   	<h1 style="margin-left:400px">Image Segmentation</h1>
 	<div class="pos1">
@@ -51,13 +51,13 @@
 	</div>
   	<div class="pos2">
   		<input id="name" type="text" style="margin-bottom:15px">
-      <select id="gender" style="margin-bottom:15px">
+      <select id="gender" style="margin-bottom:15px;width:200px">
         <option value="Male">Male</option>
         <option value="Female">Female</option>
       </select>
   		<!-- <input id="gender" type="text" style="margin-bottom:15px"> -->
   		<input id="age" type="text" style="margin-bottom:15px">
-      <select id="background" style="margin-bottom:15px">
+      <select id="background" style="margin-bottom:15px;width:200px">
         <option value="No">No</option>
         <option value="Yes">Yes</option>
       </select>
@@ -82,7 +82,7 @@
     person.save(null, {
       success: function(person) {
           // Execute any logic that should take place after the object is saved.
-          alert('New record created with name: ' + person.Name);
+          alert('New record created with name: ' + person.name);
           window.location.href="testWindow.html";
       },
       error: function(person, error) {

@@ -13,50 +13,49 @@
     var count = 0;
     var path = "./Data/Lulu/";
     function main() {
-      //var filename = path.substring(path.lastIndexOf('/')+1);
-      //document.write("123");
-      //var index = window.location.pathname.lastIndexOf("/");
-      //var filename = window.location.pathname;
-      //allFiles = getAllFilesFromFolder(path);
-      //alert(allFiles);
-
       document.getElementById("lulu").src="./Data/Lulu/2018.png";
       document.getElementById("origi").src="./Data/Original/2018.jpg";
       document.getElementById("saber").src="./Data/Saber/2018.png";
     }
-    var getAllFilesFromFolder = function(dir) {
-      var filesystem = require("fs");
-      var results = [];
-      filesystem.readdirSync(dir).forEach(function(file) {
-          file = dir+'/'+file;
-          var stat = filesystem.statSync(file);
-          if (stat && stat.isDirectory()) {
-              results = results.concat(_getAllFilesFromFolder(file))
-          } else results.push(file);
-      });
-    return results;
-    };
+
     function click1() {
       count = count + 1;
-      if (count < 3) {
-        document.getElementById("label").innerHTML = count + 1 + "/3";
-        document.getElementById("lulu").src="./Data/Lulu/2092.png";
-        document.getElementById("origi").src="./Data/Original/2092.jpg";
-        document.getElementById("saber").src="./Data/Saber/2092.png";    
-      } else {
-        window.location.href="index.html";
-      }
-      
+      switch(count) {
+        case 1:
+          document.getElementById("label").innerHTML = count + 1 + "/3";
+          document.getElementById("lulu").src="./Data/Lulu/2092.png";
+          document.getElementById("origi").src="./Data/Original/2092.jpg";
+          document.getElementById("saber").src="./Data/Saber/2092.png";
+          break;
+        case 2:
+          document.getElementById("label").innerHTML = count + 1 + "/3";
+          document.getElementById("lulu").src="./Data/Lulu/3096.png";
+          document.getElementById("origi").src="./Data/Original/3096.jpg";
+          document.getElementById("saber").src="./Data/Saber/3096.png";
+          break;
+        default:
+          window.location.href="index.html";
+          break;
+      } 
     }
     function click2() {
       count = count + 1;
-      if (count < 3) {
-        document.getElementById("label").innerHTML = count + 1 + "/3";
-        document.getElementById("lulu").src="./Data/Lulu/2092.png";
-        document.getElementById("origi").src="./Data/Original/2092.jpg";
-        document.getElementById("saber").src="./Data/Saber/2092.png";     
-      } else {
-        window.location.href="index.html";      
+      switch(count) {
+        case 1:
+          document.getElementById("label").innerHTML = count + 1 + "/3";
+          document.getElementById("lulu").src="./Data/Lulu/2092.png";
+          document.getElementById("origi").src="./Data/Original/2092.jpg";
+          document.getElementById("saber").src="./Data/Saber/2092.png";
+          break;
+        case 2:
+          document.getElementById("label").innerHTML = count + 1 + "/3";
+          document.getElementById("lulu").src="./Data/Lulu/3096.png";
+          document.getElementById("origi").src="./Data/Original/3096.jpg";
+          document.getElementById("saber").src="./Data/Saber/3096.png";
+          break;
+        default:
+          window.location.href="index.html";
+          break;
       }
     }
   </script>
