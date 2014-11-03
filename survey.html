@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Image Segmentation</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+  <style>
+  div.pos0{
+  	position:absolute;
+  	left: 100px;
+  	top: 50px;
+  	z-index: -1;
+  }
+  div.pos1{
+  	position:absolute;
+  	left: 292px;
+  	top: 78px;
+  	z-index: 0;
+  }
+  div.pos2{
+  	position:absolute;
+  	height: 157px;
+  	left: 534px;
+  	width: 164px;
+  	z-index: 1;
+  	top: 91px;
+  }
+  div.pos3{
+  	position:absolute;
+  	height: 33px;
+  	left: 476px;
+  	width: 184px;
+  	top: 250px;
+  	z-index: 3;
+  }
+  </style>
+</head>
+
+<body>
+<div class="pos0">
+  	<h1 style="margin-left:400px">Image Segmentation</h1>
+	<div class="pos1">
+	  <p align="center">Name</p>
+	  <p align="center">Gender</p>
+	  <p align="center">Age</p>
+	  <p align="center">Background in Image Processing</p>
+	</div>
+  	<div class="pos2">
+  		<input id="name" type="text" style="margin-bottom:15px">
+      <select id="gender" style="margin-bottom:15px">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+  		<!-- <input id="gender" type="text" style="margin-bottom:15px"> -->
+  		<input id="age" type="text" style="margin-bottom:15px">
+      <select id="background" style="margin-bottom:15px">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+  		<!-- <input id="background" type="text" style="margin-bottom:15px"> -->
+	</div>
+	<div class="pos3">
+		<input type="button" id="submit" value="Submit" class="poe3">
+	</div>
+</div>
+<script type="text/javascript">Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
+  document.getElementById("submit").onclick = function() {
+    var name = $("#name").val();
+    var gender = $("#gender").val();
+    var age = $("#age").val();
+    var background = $("#background").val();
+    var Person = Parse.Object.extend("Person");
+    var person = new Person();
+    person.set("Name", name);
+    person.set("Gender", gender);
+    person.set("Age", age);
+    person.set("Background", background);
+    person.save(null, {
+      success: function(person) {
+          // Execute any logic that should take place after the object is saved.
+          alert('New record created with name: ' + person.Name);
+          window.location.href="testWindow.html";
+      },
+      error: function(person, error) {
+          // Execute any logic that should take place if the save fails.
+          // error is a Parse.Error with an error code and message.
+          alert('Failed to create new object, with error code: ' + error.message);
+        }
+    });
+  }
+</script>
+</body>
+
+</html>
