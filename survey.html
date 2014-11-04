@@ -67,30 +67,48 @@
 		<input type="button" id="submit" value="Submit" class="poe3">
 	</div>
 </div>
-<script type="text/javascript">Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
+<script type="text/javascript">
+  Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
   document.getElementById("submit").onclick = function() {
-    var name = $("#name").val();
-    var gender = $("#gender").val();
-    var age = $("#age").val();
-    var background = $("#background").val();
     var Person = Parse.Object.extend("Person");
-    var person = new Person();
-    person.set("Name", name);
-    person.set("Gender", gender);
-    person.set("Age", age);
-    person.set("Background", background);
-    person.save(null, {
-      success: function(person) {
-          // Execute any logic that should take place after the object is saved.
-          alert('New record created with name: ' + person.name);
-          window.location.href="testWindow.html";
-      },
-      error: function(person, error) {
-          // Execute any logic that should take place if the save fails.
-          // error is a Parse.Error with an error code and message.
-          alert('Failed to create new object, with error code: ' + error.message);
+    var query = new Parse.Query(Person);
+    query.find({
+      success: function(results) {
+        var currentID = 0;
+        var personID = 0;
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          personID = object.get('personID');
+          if(personID > currentID) {
+            currentID = personID;
+          }
         }
-    });
+        currentID = currentID + 1;
+        var name = $("#name").val();
+        var gender = $("#gender").val();
+        var age = $("#age").val();
+        var background = $("#background").val();
+        var person = new Person();
+        person.set("Name", name);
+        person.set("Gender", gender);
+        person.set("Age", age);
+        person.set("Background", background);
+        person.set("personID", currentID);
+        person.save(null, {
+          success: function(person) {
+              alert("testWindow.html?" + currentID);
+              window.location.href="testWindow.html?" + currentID;
+          },
+          error: function(person, error) {
+              alert('Failed to create new object, with error code: ' + error.message);
+            }
+        });
+      },
+      error: function(error) {
+        alert("Error: " + error.code);
+        window.location.href="index.html";
+      }
+    })
   }
 </script>
 </body>

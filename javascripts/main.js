@@ -5,9 +5,11 @@ var pathS = "./Data/Saber/";
 var showOrder = new Array(411);
 var algrOrder = new Array(411);
 
-id = 1;
+id = GetArgsFromHref(window.location.href);
+alert(id);
 Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
 var Data = Parse.Object.extend("Data");
+var Person = Parse.Object.extend("Person");
 // var data = new Data();
 // data.set("123", 1);
 // data.save();
@@ -53,6 +55,7 @@ function main() {
   {
     algrOrder[i] = Math.random()>0.5 ? 1 : 2;
   }
+  document.getElementById("label").innerHTML = count + 1 + "/100";
   showImage(showOrder[count], algrOrder[count]);
   //alert(imageName[showOrder[count]]); 
 }
@@ -74,6 +77,18 @@ function showImage(number, order) {
     path = pathL + imageName[number] + ".png"
     document.getElementById("saber").src=path;  
   }
+}
+
+function GetArgsFromHref(sHref) 
+{ 
+　　var args = sHref.split("?"); 
+　　var retval = 0; 
+　　if(args[0] == sHref) /*参数为空*/ 
+　　{ 
+　　    return retval; /*无需做任何处理*/ 
+　　} 
+　　var retval = parseInt(args[1]); 
+　　return retval; 
 }
 
 function randomsort(a, b) {  
