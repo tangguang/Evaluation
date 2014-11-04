@@ -6,7 +6,6 @@ var showOrder = new Array(411);
 var algrOrder = new Array(411);
 
 id = GetArgsFromHref(window.location.href);
-alert(id);
 Parse.initialize("IrJMbpAHoG7ZoATROUEMLXSle3WsQZZpchqazCjn", "3wu1uC2BvUDAleqxRE90CYtGbn946hBvtYHtx6nU");
 var Data = Parse.Object.extend("Data");
 var Person = Parse.Object.extend("Person");
@@ -116,6 +115,7 @@ function click1() {
     showImage(showOrder[count], algrOrder[count]);
     //alert(imageName[showOrder[count]]);     
   } else {
+    alert("Test finished!");
     window.location.href="index.html";  
   }
 }
@@ -141,6 +141,7 @@ function click2() {
     showImage(showOrder[count], algrOrder[count]);
     //alert(imageName[showOrder[count]]);     
   } else {
+    alert("Test finished!");
     window.location.href="index.html";     
   }
 }

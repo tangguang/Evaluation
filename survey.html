@@ -96,7 +96,7 @@
         person.set("personID", currentID);
         person.save(null, {
           success: function(person) {
-              alert("testWindow.html?" + currentID);
+              alert("Created Successfully with ID: " + currentID);
               window.location.href="testWindow.html?" + currentID;
           },
           error: function(person, error) {
@@ -106,7 +106,7 @@
       },
       error: function(error) {
         alert("Error: " + error.code);
-        window.location.href="index.html";
+        //window.location.href="index.html";
       }
     })
   }
