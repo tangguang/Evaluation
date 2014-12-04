@@ -10,7 +10,7 @@ var imageName = new Array("10081","12003","12074","12084","14037","15088","16052
   "8049","8068","8143");
 var numTest = imageName.length;
 var numEachTest = 88;
-alert(numTest);
+// alert(numTest);
 // Global Variables
 var count = 0;
 var pathL = "./Data/Lulu/";
